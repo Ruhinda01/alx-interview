@@ -18,11 +18,11 @@ def canUnlockAll(boxes):
     """
     box_size = len(boxes)
 
-    unlocked = set(0)
+    unlocked = set()
 
     for idx, box in enumerate(boxes):
-        if idx in unlocked:
-            continue
+        if idx == 0:
+            unlocked.add(idx)
         for key in box:
             if key < box_size and key not in unlocked and key != idx:
                 unlocked.add(key)
